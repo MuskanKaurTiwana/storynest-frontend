@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useParams, useNavigate, Link } from 'react-router-dom';
-import axios from 'axios';
+import API from '../utils/api'; // ✅ Using configured axios instance
 import CommentBox from '../components/CommentBox';
 import CommentList from '../components/CommentList';
 import './BlogDetail.css';
@@ -14,11 +14,10 @@ const BlogDetails = () => {
   const [error, setError] = useState('');
 
   const currentUserId = localStorage.getItem('userId');
-  const token = localStorage.getItem('token');
 
   const fetchBlog = async () => {
     try {
-      const res = await axios.get(`http://localhost:5000/api/blogs/${id}`);
+      const res = await API.get(`/blogs/${id}`);
       setBlog(res.data);
     } catch {
       setError('Failed to load blog.');
@@ -27,7 +26,7 @@ const BlogDetails = () => {
 
   const fetchComments = async () => {
     try {
-      const res = await axios.get(`http://localhost:5000/api/comments/${id}`);
+      const res = await API.get(`/comments/${id}`);
       setComments(res.data);
     } catch {
       console.error('Failed to load comments.');
@@ -39,9 +38,7 @@ const BlogDetails = () => {
     if (!confirmed) return;
 
     try {
-      await axios.delete(`http://localhost:5000/api/blogs/${id}`, {
-        headers: { Authorization: `Bearer ${token}` },
-      });
+      await API.delete(`/blogs/${id}`);
       alert('Blog deleted successfully.');
       navigate('/');
     } catch {
@@ -52,7 +49,7 @@ const BlogDetails = () => {
   useEffect(() => {
     fetchBlog();
     fetchComments();
-  }, [fetchBlog, fetchComments]);
+  }, []);
 
   if (error) return <p style={{ color: 'red' }}>{error}</p>;
   if (!blog) return <p>Loading...</p>;
