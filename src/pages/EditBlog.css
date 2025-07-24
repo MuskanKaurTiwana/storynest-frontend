@@ -1,0 +1,66 @@
+.edit-blog-form {
+  background: url('../assets/paper-texture.jpg'); /* Use a cozy paper texture */
+  background-size: cover;
+  border-radius: 20px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  padding: 2rem;
+  max-width: 600px;
+  margin: 2rem auto;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+.edit-blog-title {
+  font-size: 1.8rem;
+  margin-bottom: 1.5rem;
+  font-family: 'Patrick Hand', cursive;
+  color: #3d2e16;
+  text-align: center;
+}
+
+.edit-blog-input,
+.edit-blog-textarea {
+  width: 100%;
+  border: 1.5px dashed #bfa77a;
+  padding: 12px;
+  font-size: 1rem;
+  margin-bottom: 1rem;
+  border-radius: 12px;
+  background: #fffdf7;
+  resize: none;
+  font-family: 'Courier New', monospace;
+}
+
+.edit-blog-button {
+  background-color: #a37b4c;
+  color: white;
+  padding: 0.7rem 1.5rem;
+  border: none;
+  border-radius: 12px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.3s ease;
+  font-family: 'Patrick Hand', cursive;
+}
+
+.edit-blog-button:hover {
+  background-color: #8c6239;
+}
+
+.edit-blog-success {
+  color: #3b7c3b;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+.edit-blog-error {
+  color: #c0392b;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+.edit-blog-loading {
+  text-align: center;
+  padding: 2rem;
+  font-size: 1.2rem;
+  font-family: 'Patrick Hand', cursive;
+}

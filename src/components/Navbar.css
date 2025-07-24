@@ -1,0 +1,47 @@
+.navbar {
+  background-color: #f4ede4;
+  padding: 12px 32px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-family: 'Karla', sans-serif;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.08);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.navbar .brand {
+  font-size: 1.6rem;
+  font-weight: bold;
+  color: #3b2f2f;
+  text-decoration: none;
+}
+
+.nav-right a,
+.nav-right button {
+  margin-left: 20px;
+  font-size: 1rem;
+  text-decoration: none;
+  background: none;
+  border: none;
+  color: #5a4a42;
+  cursor: pointer;
+  font-family: inherit;
+  transition: color 0.2s ease;
+}
+
+.nav-right a:hover,
+.nav-right button:hover {
+  color: #a35b43;
+}
+
+.profile-icon {
+  font-size: 1.5rem;
+  margin-left: 1rem;
+  transition: transform 0.2s ease;
+}
+.profile-icon:hover {
+  transform: scale(1.2);
+}
+

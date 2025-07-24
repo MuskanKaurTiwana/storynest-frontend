@@ -1,0 +1,48 @@
+/* UserProfile.css */
+
+.profile-container {
+  max-width: 800px;
+  margin: 2rem auto;
+  padding: 2rem;
+  background: #fffefc;
+  border: 2px dashed #e0cfc2;
+  border-radius: 16px;
+  background-size: cover;
+  background-repeat: no-repeat;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.profile-heading {
+  font-size: 2.2rem;
+  margin-bottom: 1.5rem;
+  text-align: center;
+  font-family: 'Caveat', cursive;
+  color: #7d5a50;
+  text-shadow: 1px 1px #f3e9e1;
+}
+
+.no-blogs {
+  text-align: center;
+  font-size: 1.3rem;
+  padding: 2rem;
+  font-family: 'Comic Neue', cursive;
+  color: #a37563;
+  background-color: #fff8f2;
+  border-radius: 12px;
+  border: 1px dotted #e4cfc0;
+}
+
+.user-blogs {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.2rem;
+  padding-top: 1rem;
+}
+
+.profile-loading,
+.profile-error {
+  text-align: center;
+  font-size: 1.2rem;
+  color: #aa4a44;
+  font-family: 'Comic Neue', cursive;
+}

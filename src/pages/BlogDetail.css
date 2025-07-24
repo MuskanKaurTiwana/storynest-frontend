@@ -1,0 +1,64 @@
+.blog-detail-container {
+  /* background: url('../assets/paper-texture.jpg') repeat; Add paper texture image */
+  padding: 2rem;
+  max-width: 800px;
+  margin: 2rem auto;
+  border-radius: 20px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  font-family: 'Segoe UI', sans-serif;
+  background-color: #fffdf5;
+}
+
+.blog-detail-title {
+  font-size: 2rem;
+  font-family: 'Georgia', serif;
+  margin-bottom: 0.5rem;
+  color: #5a4231;
+}
+
+.blog-detail-meta {
+  font-size: 0.9rem;
+  font-family: 'Caveat', cursive;
+  color: #7a6c5d;
+  margin-bottom: 1rem;
+}
+
+.blog-detail-content {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  white-space: pre-line;
+  margin-bottom: 2rem;
+}
+
+.blog-detail-buttons {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.blog-detail-buttons button {
+  border: none;
+  padding: 0.6rem 1.2rem;
+  border-radius: 8px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.blog-detail-buttons .edit-btn {
+  background-color: #8ab6a9;
+  color: white;
+}
+
+.blog-detail-buttons .edit-btn:hover {
+  background-color: #719e91;
+}
+
+.blog-detail-buttons .delete-btn {
+  background-color: #e4786f;
+  color: white;
+}
+
+.blog-detail-buttons .delete-btn:hover {
+  background-color: #d2594e;
+}
