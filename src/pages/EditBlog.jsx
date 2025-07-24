@@ -15,21 +15,25 @@ function EditBlog() {
 
   const token = localStorage.getItem('token');
 
-  useEffect(() => {
-    const fetchBlog = async () => {
-      if (!id) return;
-      try {
-        const res = await API.get(`/blogs/${id}`);
-        setTitle(res.data.title);
-        setContent(res.data.content);
-        setLoading(false);
-      } catch (err) {
-        setError('Failed to fetch blog.');
-        setLoading(false);
-      }
-    };
-    fetchBlog();
-  }, [id]);
+  // EditBlog.jsx
+useEffect(() => {
+  const fetchBlog = async () => {
+    if (!id) return;
+    try {
+      const res = await API.get(`/blogs/${id}`, {
+        headers: { Authorization: `Bearer ${token}` } // ✅ Include token here
+      });
+      setTitle(res.data.title);
+      setContent(res.data.content);
+      setLoading(false);
+    } catch (err) {
+      setError('Failed to fetch blog.');
+      setLoading(false);
+    }
+  };
+  fetchBlog();
+}, [id, token]);
+
 
   const handleSubmit = async (e) => {
     e.preventDefault();
