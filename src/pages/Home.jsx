@@ -3,13 +3,14 @@ import axios from 'axios';
 import { Link } from 'react-router-dom';
 import BlogCard from '../components/BlogCard';
 import './Home.css'; 
+import API from '../utils/api';
 
 function Home() {
   const [blogs, setBlogs] = useState([]);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    axios.get('http://localhost:5000/api/blogs')
+    API.get('/blogs')
       .then((res) => setBlogs(res.data))
       .finally(() => setLoading(false));
   }, []);
