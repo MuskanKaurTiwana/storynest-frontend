@@ -2,6 +2,7 @@ import { useState } from 'react';
 import axios from 'axios';
 import { useNavigate, Link } from 'react-router-dom';
 import './Login.css'; // 👈 Import the new CSS
+import API from '../utils/api';
 
 function Login() {
   const [email, setEmail] = useState('');
@@ -13,8 +14,7 @@ function Login() {
     e.preventDefault();
     setLoading(true);
     try {
-      const res = await axios.post('http://localhost:5000/api/auth/login', { email, password });
-
+      const res = await API.post('/auth/login', { email, password });
       console.log('Login response received:', res.data);
 
       localStorage.setItem('token', res.data.token);
