@@ -52,7 +52,7 @@ const BlogDetails = () => {
   useEffect(() => {
     fetchBlog();
     fetchComments();
-  }, [id]);
+  }, [fetchBlog, fetchComments]);
 
   if (error) return <p style={{ color: 'red' }}>{error}</p>;
   if (!blog) return <p>Loading...</p>;

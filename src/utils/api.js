@@ -1,7 +1,8 @@
 import axios from 'axios';
 
 const API = axios.create({
-  baseURL: 'http://storynest-backend-hthr.onrender.com/api',
+  baseURL: 'https://storynest-backend-hthr.onrender.com/api',
+  withCredentials: true, // Important for sending cookies (for auth)
 });
 
 export default API;
