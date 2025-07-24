@@ -29,6 +29,7 @@ const BlogDetails = () => {
       const res = await API.get(`/comments/${id}`);
       setComments(res.data);
     } catch {
+      console.error('Failed to load blog:', err.response?.data || err.message);
       console.error('Failed to load comments.');
     }
   };
