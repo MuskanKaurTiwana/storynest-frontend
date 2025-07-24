@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import axios from 'axios';
+import API from '../utils/api'; // ✅ Use configured API
 import './CommentBox.css';
 
 function CommentBox({ blogId, onCommentAdded }) {
@@ -12,32 +12,21 @@ function CommentBox({ blogId, onCommentAdded }) {
       return;
     }
 
-    const token = localStorage.getItem('token');
-
-    if (!token) {
-      alert('Please login to add a comment.');
-      return;
-    }
-
     setLoading(true);
 
     try {
-      await axios.post(
-        `http://localhost:5000/api/comments/${blogId}`,
-        { content: comment },
-        {
-          headers: {
-            Authorization: `Bearer ${token}`,
-          },
-        }
-      );
+      await API.post(`/comments/${blogId}`, { content: comment });
 
       alert('Comment added successfully!');
       setComment('');
       if (onCommentAdded) onCommentAdded();
     } catch (error) {
       console.error('Error adding comment:', error.response?.data || error.message);
-      alert('Failed to add comment.');
+      alert(
+        error.response?.status === 401
+          ? 'Please login to add a comment.'
+          : 'Failed to add comment.'
+      );
     } finally {
       setLoading(false);
     }
@@ -65,4 +54,5 @@ function CommentBox({ blogId, onCommentAdded }) {
 }
 
 export default CommentBox;
+
 
